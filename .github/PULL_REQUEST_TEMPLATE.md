@@ -1,9 +1,24 @@
-## 추가한 기능 설명
+## Merge Request Summary
 
-<br>
+- [ ] 기능 추가
+- [ ] 버그 수정
+- [ ] 코드 개선 (최적화)
+- [ ] 기타
 
+## Description
 
-## check list
-- [ ] issue number를 브랜치 앞에 추가 하였는가?
-- [ ] 모든 단위 테스트를 돌려보고 기존에 작동하던 테스트에 영향이 없는 것을 확인했는가?
-- [ ] [우테코 pr 규칙](https://github.com/woowacourse/woowacourse-docs/blob/master/cleancode/pr_checklist.md)을 준수하였는가?
+_상세 설명 (간단한 경우 생략 가능)_
+
+---
+## Issue Number 
+- #Isuue Number
+
+---
+## Confirmed
+- [ ] : reviewer Confirmed
+
+---
+
+- `@`를 통해 Reviewer를 지정해주세요
+- 지정된 사용자는 확인 후 `Checkbox`에 체크해주세요
+- Confirmed에 모두 체크된 경우 `Merge`를 진행합니다
