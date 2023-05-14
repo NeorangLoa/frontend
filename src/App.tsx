@@ -1,6 +1,5 @@
 import { useRoutes } from 'react-router-dom';
-import { routes } from '@src/Routes';
-import '@/reset.scss';
+import { routes } from './Routes';
 function App() {
   const elem = useRoutes(routes);
   return <div>{elem}</div>;

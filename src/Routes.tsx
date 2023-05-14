@@ -1,7 +1,7 @@
-import Layout from '@src/pages/_layout';
+import Layout from './pages/_layout';
 import React, { lazy } from 'react';
 
-const Main = lazy(() => import('@src/pages/main/index'));
+const Main = lazy(() => import('./pages/main/index'));
 
 export const routes = [
   {

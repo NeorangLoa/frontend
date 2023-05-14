@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
+        "baseUrl": "./src",
         "paths": {
-          "@src/*": ["src/*"]
+          "@pages/*":["pages/*"],
+          "@app":["./App.tsx"]
         }
     }
 }
