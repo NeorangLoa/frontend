@@ -1,12 +1,7 @@
-import React, { useEffect } from 'react';
-import './index.scss';
+import React from "react";
 
-
-const Main = () => {
-  return (
-    <div>tlqk</div>
-  )
-
-};
-
-export default Main;
+export default function Main(){
+    return(
+        <div>hello world</div>
+    )
+}
