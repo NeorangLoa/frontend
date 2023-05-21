@@ -1,5 +1,6 @@
 import React from 'react';
+import LoginComponent from 'src/components/login';
 
-export default function Main() {
-  return <div>hello world</div>;
+export default function Login() {
+  return <LoginComponent />;
 }

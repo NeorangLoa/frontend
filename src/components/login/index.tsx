@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../../css/login';
 
 export default function LoginComponent() {
   const [userIDInput, setUserIDInput] = useState('');
