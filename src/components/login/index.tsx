@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from '../../assets/img/썸네일 수정.png'
 
 export default function LoginComponent() {
   const [userIDInput, setUserIDInput] = useState('');
@@ -7,23 +6,10 @@ export default function LoginComponent() {
   const [showPW, setShowPW] = useState('');
 
   return (
-    <div>
-      <div id="left">
-        <h1>나랑로아</h1>
-      </div>
-
-      <div id="right">
-        <img src={logo} id='logo' />
-        <img alt='소셜로그인' id='sociallogin' />
-
-        <fieldset id="loginForm">
-          <input id='ID' placeholder='아이디'></input>
-          <input id='PASSWORD' placeholder='비밀번호'></input>
-          <button id='LoginButton'>로그인</button>  {/* submit */}
-        </fieldset>
-        <p>아이디가 없으신가요?</p>
-        <button id='SignUp' placeholder='회원가입'></button>
-      </div>
-    </div>
+    <fieldset className="loginForm">
+      <input className='ID' placeholder='아이디'></input>
+      <input className='PASSWORD' placeholder='비밀번호'></input>
+      <button className='LoginButton'>로그인</button>  {/* submit */}
+    </fieldset>
   );
 }

@@ -1,16 +1,69 @@
 div.page {
-    display: inline-block;
     width: 100vw;
     height: 100vh;
+    background-color: #6BB5A7;
 }
 
 div.left {
     float: left;
     width: 50vw;
     height: 100vh;
-    background-color: #6BB5A7;
+
+    h1.title {
+        margin: 50px 30px;
+
+        // font-style: Inter;
+        font-weight: bold;
+        font-size: 64px;
+        color: #FFFFFF;
+    }
+
+    a.introduction {
+        position: absolute;
+        bottom: 0px;
+        margin: 20px;
+    
+        // font-style: Inter;
+        font-weight: bold;
+        // font-size: 2em;
+        font-size: 32px;
+        color: #FFFFFF;
+
+        p {
+            margin: 0px;
+        }
+    }
 }
 
-#left {
-    
+div.right {
+    float: right;
+    width: 50vw;
+    height: 100vh;
+    border-radius: 50px 0% 0% 50px;
+    background-color: #FEFEFE;
+
+    img.logo {
+        display: block;
+        margin: 20% auto;
+        width: 30%;
+    }
+
+    button.sociallogin {
+        // 가운데 정렬
+        width: 100px;
+        margin: 0 auto;
+    }
+
+    fieldset.loginForm {
+        // 가운데 정렬
+        margin: 0 auto;
+        border: 0px;
+
+        input {
+            display: block;
+            border: 0px;
+        }
+        input.ID {
+        }
+    }
 }
