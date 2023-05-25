@@ -1,0 +1,28 @@
+.charsearchlayout{
+  width: 100%;
+  height: 40px;
+  background-color: #48B9A5;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.charsearchbar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.searchinput{
+  height: 90%;
+  width: 500px;
+  border: none;
+}
+
+.charsearchbutton{
+  height: 20px;
+  width: 20px;
+}
