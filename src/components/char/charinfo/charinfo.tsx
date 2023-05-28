@@ -13,7 +13,7 @@ export default function Charinfo(){
                 특화 신속
                 1829 500
                 특성합 2400
-                공격력 40000
+                공격력 40000  
                 최대 생명력 140244
               </div>
             </div>
