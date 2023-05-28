@@ -23,7 +23,7 @@ const Chardetail = () => {
   const [AccessoryData,setAccessoryData] = useState<Equipment[]>([]);
 
   useEffect(()=>{
-    const fetchData = async () => {
+    const equipmentFetchData = async () => {
       try{
         const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/equipment`,{
           headers :{
@@ -44,8 +44,10 @@ const Chardetail = () => {
       console.error(error)
     }};
 
-    fetchData();
+    equipmentFetchData();
   },[]);
+
+
   
 
   return(
