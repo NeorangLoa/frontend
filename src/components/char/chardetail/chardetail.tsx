@@ -4,15 +4,10 @@ import CardLayer from "./CardLayer/CardLayer";
 import EquipmentLayer from "./EquipmentLayer/EquipmentLayer";
 import GemLayer from "./GemLayer/GemLayer";
 import axios from 'axios'
+import { Equipment } from "src/types/Equipment";
 
 const Chardetail = () => {
-  interface Equipment{
-    Type:String,
-    Name:String,
-    Icon:String,
-    Grade:String,
-    Tooltip:String
-  }
+
 
   const apiKey:string ='eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IktYMk40TkRDSTJ5NTA5NWpjTWk5TllqY2lyZyIsImtpZCI6IktYMk40TkRDSTJ5NTA5NWpjTWk5TllqY2lyZyJ9.eyJpc3MiOiJodHRwczovL2x1ZHkuZ2FtZS5vbnN0b3ZlLmNvbSIsImF1ZCI6Imh0dHBzOi8vbHVkeS5nYW1lLm9uc3RvdmUuY29tL3Jlc291cmNlcyIsImNsaWVudF9pZCI6IjEwMDAwMDAwMDAyNDEzMjAifQ.L_aqWyhSjwLk4oXVqFbURbvn8563A94Yz6FB3T1OjWHeqhQk2xi2AnwkwzLqoOulI6uOVVsDHrydJnkSl41fWjcW67eddodqrhHdR9tLpiKM98XiNVLps5xQfJKxtDrthafzD_IxPl8kDcMZeXALRTn1Ks8cAV2hGqz2K7za8g_Rh3BsfRdgBJNBacF9LjM-uZ9A69vsWyARpw9YH7-UoGWnQ4A0mWgKpxOHuOBqGcHlRTQLPSYqkcP0NTCIiRJDBNgFbwSXAELSPwp5O5PVT1LJYnCzhe4i8JJF1ueo6SpiN6ULB7y_xRRtVIynQ1tEOoMpV7VSIvRS9HVH0WFhKw'
   
@@ -52,8 +47,8 @@ const Chardetail = () => {
 
   return(
     <div>
-      <EquipmentLayer/>
-      <AccsessoryLayer/>
+      {<EquipmentLayer/>/*EquipmentData={EquipmentData}/> */}
+      <AccsessoryLayer />
       <GemLayer/>
       <CardLayer/>
     </div>

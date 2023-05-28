@@ -1,9 +1,16 @@
 import React from "react";
+import { Equipment } from "src/types/Equipment";
 
-export default function EquipmentLayer(){
-    return(
+export default function EquipmentLayer(EquipmentData:any){
+
+  console.log(EquipmentData)
+
+  return(
+    <div>
       <div>
-        장비
+
       </div>
-    )
+
+    </div>
+  )
 }

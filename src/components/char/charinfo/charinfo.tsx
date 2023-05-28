@@ -2,6 +2,10 @@ import React from "react";
 import './charinfo.scss'
 
 export default function Charinfo(){
+
+
+  
+
     return(
         <div className="detailCharInfoLayout">
           <div className="charRightDiv">
