@@ -16,12 +16,14 @@ export default function Login() {
 
       <div className="right">
         <img src={logo} className='logo' />
-        <button className='sociallogin'>소셜로그인</button>
+        {/* <button className='sociallogin'>소셜로그인</button> */}
 
         <LoginComponent />
 
-        <a>아이디가 없으신가요?</a>
-        <button className='moveTosignup'>회원가입</button>
+        <div className='footer'>
+          <p>아이디가 없으신가요?</p>
+          <button className='moveTosignup'>회원가입</button>
+        </div>
       </div>
     </div>
   );

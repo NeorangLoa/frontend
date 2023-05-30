@@ -55,15 +55,23 @@ div.right {
     }
 
     fieldset.loginForm {
-        // 가운데 정렬
-        margin: 0 auto;
         border: 0px;
 
-        input {
+        input.ID, input.PASSWORD {
             display: block;
+            margin: 70px auto;
+            width: 400px;
+            height: 30px;
+
             border: 0px;
+            border-bottom: 1px solid #000000;
+            opacity: 0.5;
         }
-        input.ID {
+        button.LoginButton {
+            display: block;
+            margin: 0 auto;
+
+            
         }
     }
 }
