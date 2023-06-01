@@ -37,12 +37,12 @@ export default function Charinfo(){
                 전투:{userData?.CharacterLevel}
                 아이템:{userData?.ItemMaxLevel}
               </div>
-              <div className="charStat">
+              <div className="charStat"/*이부분 필터링 적용해서 Stats부분 관리*/>
                 특화 신속
                 1829 500
                 특성합 2400
                 공격력 40000  
-                최대 생명력 140244
+                최대 생명력 140244 
               </div>
             </div>
             <div className="charEngraving">
