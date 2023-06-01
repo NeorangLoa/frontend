@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { UserinfoData } from "src/types/Types";
 import './charinfo.scss'
 
@@ -9,6 +9,7 @@ export default function Charinfo(){
   
   const nickname:string = "그때그떨림"
 
+  const [userData, setUserData] = useState<UserinfoData>();
 
   useEffect(()=>{
     const cardFetchData = async () => {
@@ -20,6 +21,7 @@ export default function Charinfo(){
       });
       const responseData:UserinfoData = response.data; 
       console.log(responseData)
+      setUserData(responseData);
     }catch(error){
       console.error(error)
     }};
@@ -32,7 +34,8 @@ export default function Charinfo(){
           <div className="charRightDiv">
             <div className="charLevelStat">
               <div className="charLevel">
-                아이템:1580 전투:Lv 60
+                전투:{userData?.CharacterLevel}
+                아이템:{userData?.ItemMaxLevel}
               </div>
               <div className="charStat">
                 특화 신속

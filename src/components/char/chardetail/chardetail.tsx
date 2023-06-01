@@ -54,7 +54,7 @@ const Chardetail = () => {
 
   return(
     <div>
-      {<EquipmentLayer/>/*EquipmentData={EquipmentData}/> */}
+      {/* <EquipmentLayer EquipmentData={EquipmentData}/> */}
       <AccsessoryLayer />
       <GemLayer/>
       <CardLayer/>

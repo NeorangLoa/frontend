@@ -11,4 +11,4 @@ export default function Charsearch(){
           </div>
         </div>
     )
-}
+} 
