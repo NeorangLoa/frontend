@@ -4,7 +4,7 @@ import CardLayer from "./CardLayer/CardLayer";
 import EquipmentLayer from "./EquipmentLayer/EquipmentLayer";
 import GemLayer from "./GemLayer/GemLayer";
 import axios from 'axios'
-import { Equipment } from "src/types/Equipment";
+import { Welcome } from "src/types/Types";
 
 const Chardetail = () => {
 
@@ -14,8 +14,9 @@ const Chardetail = () => {
   const nickname:string = "그때그떨림"
   
 
-  const [EquipmentData,setEquipmentData] = useState<Equipment[]>([]);
-  const [AccessoryData,setAccessoryData] = useState<Equipment[]>([]);
+  // const [EquipmentData,setEquipmentData] = useState<Equipment[]>([]);
+  // const [AccessoryData,setAccessoryData] = useState<Equipment[]>([]);
+  const [ArmoryProfileData, setArmoryProfileData] = useState<Welcome[]>([]);
 
   useEffect(()=>{
     const equipmentFetchData = async () => {
@@ -28,19 +29,24 @@ const Chardetail = () => {
       const responseData = response.data; 
       console.log(responseData);
 
-      const equipmentFilterData = responseData.filter((e:Equipment) => e.Type === '무기'||e.Type === '투구'||e.Type === '어깨'||e.Type === '상의'||e.Type === '하의'||e.Type === '장갑');
-      setEquipmentData(equipmentFilterData);
-      console.log(equipmentFilterData);
+      const ArmoryProfileFilterData = responseData.filter((e:Welcome)=> e.ArmoryProfile);
+      setArmoryProfileData(ArmoryProfileFilterData);
+      console.log(ArmoryProfileData)
 
-      const accessoryFilterData = responseData.filter((e:Equipment)=> e.Type==='목걸이'||e.Type==='귀걸이'||e.Type==='반지'||e.Type==='팔찌'||e.Type==='어빌리티 스톤')
-      setAccessoryData(accessoryFilterData);
-      console.log(accessoryFilterData);
+
+      // const equipmentFilterData = responseData.filter((e:Equipment) => e.Type === '무기'||e.Type === '투구'||e.Type === '어깨'||e.Type === '상의'||e.Type === '하의'||e.Type === '장갑');
+      // setEquipmentData(equipmentFilterData);
+      // console.log(equipmentFilterData);
+
+      // const accessoryFilterData = responseData.filter((e:Equipment)=> e.Type==='목걸이'||e.Type==='귀걸이'||e.Type==='반지'||e.Type==='팔찌'||e.Type==='어빌리티 스톤')
+      // setAccessoryData(accessoryFilterData);
+      // console.log(accessoryFilterData);
     }catch(error){
       console.error(error)
     }};
 
     equipmentFetchData();
-  },[]);
+  });
 
 
   
