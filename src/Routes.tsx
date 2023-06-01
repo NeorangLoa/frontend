@@ -17,4 +17,4 @@ export const routes = [
   },
 ];
 
-export const pages = [{ route: '/' }];
+export const pages = [{ route: '/' },{route:'/char'}];
