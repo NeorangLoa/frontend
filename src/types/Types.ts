@@ -58,7 +58,7 @@ export interface Gem {
 }
 
 
-export interface Userinfo {
+export interface UserinfoData {
   CharacterImage:     string;
   ExpeditionLevel:    number;
   PvpGradeName:       string;
