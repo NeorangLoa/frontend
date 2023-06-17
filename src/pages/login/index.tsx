@@ -11,10 +11,10 @@ export default function Login() {
     <div className='page'>
       <div className="left">
         <h1 className='title'>나랑로아</h1>
-        <a className='introduction'>
+        <span className='introduction'>
           <p>나랑로아의 회원이 되어</p>
           <p>함께 레이드를 돌 사람을 찾아보세요</p>
-        </a>
+        </span>
       </div>
 
       <div className="right">
