@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import { EquipmentData } from "src/types/Types";
 import { apiKey } from "src/api";
+import './chardetail.scss'
+
 
 export interface EquipmentProps{
   detail: {  
@@ -64,7 +66,12 @@ const Chardetail = () => {
 
   return(
     <div>
-      장비 장신구
+      <div className="EquipmentLayout">
+        장비
+      </div>
+      <div className="AccessoryLayout">
+        악세
+      </div>
     </div>
   )
 }

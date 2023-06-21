@@ -73,12 +73,18 @@ export default function Charinfo(){
 
     return(
         <div className="detailCharInfoLayout">
-          <div className="charRightDiv">
+          <div className="charLeftDiv">
             <div className="charLevelStat">
               <div className="charLevel">
-                전투:{userData?.CharacterLevel}
-                아이템:{userData?.ItemAvgLevel}
-                원정대레벨:{userData?.ExpeditionLevel}
+                <div>
+                  전투:{userData?.CharacterLevel}
+                </div>
+                <div>
+                  아이템:{userData?.ItemAvgLevel}
+                </div>
+                {/* <div>
+                  원정대레벨:{userData?.ExpeditionLevel}
+                </div> */}
               </div>
               <div className="charStat"/*이부분 필터링 적용해서 Stats부분 관리*/>
                 특화 신속
@@ -92,8 +98,8 @@ export default function Charinfo(){
               {userengravingData?.map((userengravingDatas)=><div> {userengravingDatas.Name} </div>)}
             </div>
           </div>
-          <div className="charLeftDiv">
-            left
+          <div className="charRightDiv">
+            Right
           </div>
         </div>
     )
