@@ -17,7 +17,7 @@ export default function CardLayer(){
   // useEffect(()=>{
   //   const cardFetchData = async () => {
   //     try{
-  //       const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/cards`,{
+  //       const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/cards`,{ya
   //         headers :{
   //           'Authorization': `Bearer ${apiKey}`
   //         }
