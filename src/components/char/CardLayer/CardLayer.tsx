@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { apiKey } from "src/api";
 import { Card, CardData, CardEffect } from "src/types/Types";
+import './CardLayer.scss'
+
 
 export default function CardLayer(){
 
@@ -41,7 +43,7 @@ export default function CardLayer(){
   //   console.log(CardEffectData);
   // },[CardEffectData])
     return(
-      <div>
+      <div className="CardLayerLayout">
         카드
       </div>
     )

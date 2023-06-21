@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { apiKey } from "src/api";
 import { Gem, GemData, GemEffect } from "src/types/Types";
+import './GemLayer.scss'
 
 export default function GemLayer(){
 
@@ -42,7 +43,7 @@ export default function GemLayer(){
   //   console.log(GemEffectData);
   // },[GemEffectData])
     return(
-      <div>
+      <div className="GemLayerLayout">
         보석
       </div>
   )
