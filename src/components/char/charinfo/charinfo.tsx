@@ -6,11 +6,15 @@ import './charinfo.scss'
 import { Stats } from "fs";
 import { userInfo } from "os";
 
-export default function Charinfo(){
+export default function Charinfo(name:any){
+
+  const nickname = name
+
+  console.log('이름')
+  console.log(name)
 
   const api:string = apiKey
   
-  const nickname:string = "그때그떨림"
 
   const [userData, setUserData] = useState<UserinfoData|undefined>();
   const [userAttackData, setuserAttackData] = useState<Stat[]|undefined>();
