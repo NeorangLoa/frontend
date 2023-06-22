@@ -10,38 +10,39 @@ export default function CardLayer(){
 
   const api:string = apiKey
 
-  // const nickname:string = "그때그떨림"
+  const nickname:string = "그때그떨림"
 
-  // const [CardData,setCardData] = useState<Card[]>([]);
-  // const [CardEffectData, setCardEffectData] = useState<CardEffect[]>([]);
+  const [CardData,setCardData] = useState<Card[]>([]);
+  const [CardEffectData, setCardEffectData] = useState<CardEffect[]>([]);
 
 
-  // useEffect(()=>{
-  //   const cardFetchData = async () => {
-  //     try{
-  //       const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/cards`,{ya
-  //         headers :{
-  //           'Authorization': `Bearer ${apiKey}`
-  //         }
-  //     });
-  //     const responseData:CardData = response.data; 
-  //     console.log(responseData)
-  //     setCardData(responseData.Cards)
-  //     setCardEffectData(responseData.Effects)
-  //   }catch(error){
-  //     console.error(error)
-  //   }};
+  useEffect(()=>{
+    const cardFetchData = async () => {
+      try{
+        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/cards`,{
+          headers :{
+            'Authorization': `Bearer ${apiKey}`
+          }
+      });
+      const responseData:CardData = response.data; 
+      console.log(responseData)
+      setCardData(responseData.Cards)
+      setCardEffectData(responseData.Effects)
+    }catch(error){
+      console.error(error)
+    }};
 
-  //   cardFetchData();
-  // },[]);
+    cardFetchData();
+  },[]);
 
-  // useEffect(()=>{
-  //   console.log(CardData);
-  // },[CardData]);
+  useEffect(()=>{
+    console.log(CardData);
+  },[CardData]);
 
-  // useEffect(()=>{
-  //   console.log(CardEffectData);
-  // },[CardEffectData])
+  useEffect(()=>{
+    console.log(CardEffectData);
+  },[CardEffectData])
+  
     return(
       <div className="CardLayerLayout">
         카드

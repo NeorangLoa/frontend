@@ -65,12 +65,22 @@ const Chardetail = () => {
 
 
   return(
-    <div>
+    <div className="chardetaillayout">
       <div className="EquipmentLayout">
-        장비
+        {EquipmentData?.map((data:EquipmentData,index:any) =>(
+          <div  className="EquipmentdetailLayout">
+            <img className="Equipmentimg" src={data.Icon}/>
+            {data.Name}
+          </div>
+        ))}
       </div>
       <div className="AccessoryLayout">
-        악세
+        {AccessoryData?.map((data:EquipmentData,index:any)=>(
+          <div>
+            <img className="Equipmentimg" src={data.Icon}/>
+            {data.Name}
+          </div>
+        ))}
       </div>
     </div>
   )
