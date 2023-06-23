@@ -13,7 +13,7 @@ export default function Char(){
     const location = useLocation();
     const queryParems = new URLSearchParams(location.search);
     const searchTerm = queryParems.get('q');
-
+    
 
     return(
         <div className="charlayout">

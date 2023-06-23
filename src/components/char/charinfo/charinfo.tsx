@@ -8,10 +8,6 @@ import { userInfo } from "os";
 
 export default function Charinfo(name:any){
 
-  const nickname = name
-
-  console.log('이름')
-  console.log(name)
 
   const api:string = apiKey
   
@@ -20,11 +16,21 @@ export default function Charinfo(name:any){
   const [userAttackData, setuserAttackData] = useState<Stat[]|undefined>();
   const [userHealthData,setuserHealthData] = useState<Stat[]|undefined>();
   const [userengravingData , setuserengravingData] = useState<Effect[]|undefined>();
+  const [userNickame, setUserNickname ] = useState<string>();
 
-  useEffect(()=>{
-    const profileFetchData = async () => {
+  useEffect (() => {
+    const userName =async (nickname:string) => {
+      try {
+        const settingUserName =await setUserNickname(nickname);
+      } catch (error) {
+        console.log('error');
+      }
+    };
+    const profileFetchData = async ( name:any ) => {
       try{
-        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/profiles`,{
+        console.log('이름들어감?')
+        console.log(name.name)
+        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${name.name}/profiles`,{
           headers :{
             'Authorization': `Bearer ${apiKey}`
           }
@@ -48,13 +54,9 @@ export default function Charinfo(name:any){
       console.error(error)
     }};
 
-    profileFetchData();
-  },[]);
-
-  useEffect(()=>{
-    const engravingsFetchData = async () => {
+    const engravingsFetchData = async ( name:any) => {
       try{
-        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/engravings`,{
+        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${name.name}/engravings`,{
           headers :{
             'Authorization': `Bearer ${apiKey}`
           }
@@ -70,10 +72,13 @@ export default function Charinfo(name:any){
       console.error(error)
     }};
 
-    engravingsFetchData();
-  },[]);
+    userName(name);
+    console.log('왜')
+    console.log(userNickame)
+    profileFetchData( userNickame );
+    engravingsFetchData(userNickame);
 
-
+  })
 
     return(
         <div className="detailCharInfoLayout">
