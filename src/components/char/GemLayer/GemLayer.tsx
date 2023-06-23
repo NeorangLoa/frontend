@@ -25,9 +25,11 @@ export default function GemLayer(){
           }
       });
       const responseData:GemData = response.data; 
-      console.log(responseData)
+      //console.log(responseData)
       setGemData(responseData.Gems)
       setGemEffectData(responseData.Effects)
+
+      // const cooldownGemData = GemData.filter((e:Gem) => e.)
     }catch(error){
       console.error(error)
     }};
@@ -36,11 +38,11 @@ export default function GemLayer(){
   },[]);
 
   useEffect(()=>{
-    console.log(GemData);
+    //console.log(GemData);
   },[GemData]);
 
   useEffect(()=>{
-    console.log(GemEffectData);
+    //console.log(GemEffectData);
   },[GemEffectData])
     return(
       <div className="GemLayerLayout">

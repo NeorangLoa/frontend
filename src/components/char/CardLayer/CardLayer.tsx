@@ -25,7 +25,7 @@ export default function CardLayer(){
           }
       });
       const responseData:CardData = response.data; 
-      console.log(responseData)
+      //console.log(responseData)
       setCardData(responseData.Cards)
       setCardEffectData(responseData.Effects)
     }catch(error){
@@ -36,11 +36,11 @@ export default function CardLayer(){
   },[]);
 
   useEffect(()=>{
-    console.log(CardData);
+    //console.log(CardData);
   },[CardData]);
 
   useEffect(()=>{
-    console.log(CardEffectData);
+    //console.log(CardEffectData);
   },[CardEffectData])
   
     return(
