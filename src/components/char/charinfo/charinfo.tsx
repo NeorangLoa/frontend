@@ -1,58 +1,114 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { apiKey } from "src/api";
-import { UserinfoData } from "src/types/Types";
+import { Effect, Engraving, EngravingsData, Stat, UserinfoData } from "src/types/Types";
 import './charinfo.scss'
+import { Stats } from "fs";
+import { userInfo } from "os";
 
-export default function Charinfo(){
+export default function Charinfo(name:any){
+
 
   const api:string = apiKey
   
-  // const nickname:string = "그때그떨림"
 
-  // const [userData, setUserData] = useState<UserinfoData>();
+  const [userData, setUserData] = useState<UserinfoData|undefined>();
+  const [userAttackData, setuserAttackData] = useState<Stat[]|undefined>();
+  const [userHealthData,setuserHealthData] = useState<Stat[]|undefined>();
+  const [userengravingData , setuserengravingData] = useState<Effect[]|undefined>();
+  const [userNickame, setUserNickname ] = useState<string>();
 
-  // useEffect(()=>{
-  //   const cardFetchData = async () => {
-  //     try{
-  //       const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/profiles`,{
-  //         headers :{
-  //           'Authorization': `Bearer ${apiKey}`
-  //         }
-  //     });
-  //     const responseData:UserinfoData = response.data; 
-  //     console.log(responseData)
-  //     setUserData(responseData);
-  //   }catch(error){
-  //     console.error(error)
-  //   }};
+  useEffect (() => {
+    const userName =async (nickname:string) => {
+      try {
+        const settingUserName =await setUserNickname(nickname);
+      } catch (error) {
+        console.log('error');
+      }
+    };
+    const profileFetchData = async ( name:any ) => {
+      try{
+        console.log('이름들어감?')
+        console.log(name.name)
+        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${name.name}/profiles`,{
+          headers :{
+            'Authorization': `Bearer ${apiKey}`
+          }
+      });
+      const responseData:UserinfoData = response.data; 
+      console.log(responseData)
+      setUserData(responseData);
 
-  //   cardFetchData();
-  // },[]);
+      const userStatFilterData= responseData.Stats;
+      console.log(userStatFilterData)
+
+      const userAttackStat = userStatFilterData.filter((e:Stat)=> e.Type==='공격력')
+      console.log(userAttackStat)
+      setuserAttackData(userAttackStat)
+
+      const userHealthstat = userStatFilterData.filter((e:Stat)=> e.Type==='최대 생명력')
+      setuserHealthData(userHealthstat)
+
+
+    }catch(error){
+      console.error(error)
+    }};
+
+    const engravingsFetchData = async ( name:any) => {
+      try{
+        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${name.name}/engravings`,{
+          headers :{
+            'Authorization': `Bearer ${apiKey}`
+          }
+      });
+      const responseData= response.data;
+      console.log(responseData);
+
+      const userengravingFillterData = responseData.Effects;
+      console.log(userengravingFillterData);
+      setuserengravingData(userengravingFillterData)
+
+    }catch(error){
+      console.error(error)
+    }};
+
+    userName(name);
+    console.log('왜')
+    console.log(userNickame)
+    profileFetchData( userNickame );
+    engravingsFetchData(userNickame);
+
+  })
 
     return(
         <div className="detailCharInfoLayout">
-          <div className="charRightDiv">
+          <div className="charLeftDiv">
             <div className="charLevelStat">
               <div className="charLevel">
-                전투:
-                아이템:
+                <div>
+                  전투:{userData?.CharacterLevel}
+                </div>
+                <div>
+                  아이템:{userData?.ItemAvgLevel}
+                </div>
+                {/* <div>
+                  원정대레벨:{userData?.ExpeditionLevel}
+                </div> */}
               </div>
               <div className="charStat"/*이부분 필터링 적용해서 Stats부분 관리*/>
                 특화 신속
                 1829 500
                 특성합 2400
-                공격력 40000  
-                최대 생명력 140244 
+                공격력 {userAttackData?.map((userAttackDatas)=><div>{userAttackDatas.Value}</div>)}
+                최대 생명력 {userHealthData?.map((userHealthDatas)=><div>{userHealthDatas.Value}</div>)}
               </div>
             </div>
             <div className="charEngraving">
-              각인
+              {userengravingData?.map((userengravingDatas)=><div> {userengravingDatas.Name} </div>)}
             </div>
           </div>
-
-          <div className="charLeftDiv">
-            left
+          <div className="charRightDiv">
+            Right
           </div>
         </div>
     )

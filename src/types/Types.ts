@@ -90,3 +90,21 @@ export interface Tendency {
   Point:    number;
   MaxPoint: number;
 }
+
+
+export interface EngravingsData {
+    Engravings: Engraving[];
+    Effects:    Effect[];
+}
+
+export interface Effect {
+    Name:        string;
+    Description: string;
+}
+
+export interface Engraving {
+    Slot:    number;
+    Name:    string;
+    Icon:    string;
+    Tooltip: string;
+}
