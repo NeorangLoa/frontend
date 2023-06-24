@@ -12,11 +12,15 @@ export default function Nav(){
   }
   
   const gotopost = () =>{
-    navigate(`/postlist`)
+    navigate(`/board/free/list`)
   }
 
   const gotologin = ()=>{
-    navigate(`login`)
+    navigate(`/login`)
+  }
+
+  const gotoraidpost = () =>{
+    navigate(`/board/raid/list`)
   }
 
 
@@ -31,7 +35,7 @@ export default function Nav(){
               <div className="navbutton" onClick={gotopost} >
                 자유게시판
               </div>
-              <div className="navbutton">
+              <div className="navbutton" onClick={gotoraidpost}>
                 레이드게시판
               </div>
             </div>

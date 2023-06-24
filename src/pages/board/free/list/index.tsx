@@ -10,7 +10,7 @@ export interface PostListType{
     "viewCounts": number
 }
 
-const PostList = () => {
+const FreepostList = () => {
     const [listData, setListData] = useState<PostListType[]|undefined>()
     useEffect(()=>{
         const postListData =async () => {
@@ -84,4 +84,4 @@ const PostList = () => {
     )
 }
 
-export default PostList;
+export default FreepostList;
