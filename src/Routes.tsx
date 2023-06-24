@@ -5,6 +5,7 @@ const Main = lazy(() => import('./pages/main/index'));
 const Char = lazy(() => import('./pages/char/char'))
 const Login = lazy(() => import('./pages/login/index'));
 const PostList = lazy(() => import('./pages/board/free/list/index'));
+const FreeEdit = lazy(() => import('./pages/board/free/edit/index'));
 
 export const routes = [
   {
@@ -14,7 +15,8 @@ export const routes = [
       { path: '/', element: <Main /> },
       { path: '/Char', element: <Char /> },
       { path: '/login', element: <Login /> },
-      { path: '/postList', element:<PostList/>}
+      { path: '/postList', element:<PostList/>},
+      { path: '/free/edit', element:<FreeEdit/>},
     ],
   },
 ];
