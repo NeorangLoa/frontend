@@ -17,7 +17,6 @@ export default function Char(){
 
     return(
         <div className="charlayout">
-            <Nav/>
             <Charsearch/>
             <div className="charinfolayout">
                 <Charinfo name={searchTerm}/>
