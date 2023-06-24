@@ -5,13 +5,6 @@ import './index.scss';
 export default function Main() {
     return(
         <div className="page">
-            <div className="navbar">
-                <span>나랑로아</span>
-                <span>자유게시판</span>
-                <span>레이드 게시판</span>
-                <span>로그인</span>
-            </div>
-
             <div className="up">
                 <div className="upForm">
                     <h1 className='title'>나랑로아</h1>
