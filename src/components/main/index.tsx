@@ -31,7 +31,7 @@ export default function Main(props:any) {
 
             {props.name === "로스트아크 이벤트" &&
                 <div className="componentContent">
-                    {/* <MainPic /> */}
+                    <MainPic name="event" />
                 </div>
             }
         </div>
