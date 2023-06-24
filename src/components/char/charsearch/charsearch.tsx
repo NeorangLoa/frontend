@@ -14,13 +14,16 @@ export default function Charsearch(){
   const navigate = useNavigate();
 
   const handleSearch = () =>{
-    const queryParems = new URLSearchParams();
-    queryParems.set('q',name);
-    const queryString = queryParems.toString();
-    navigate(`/char?${queryString}`);
+    if (name === ''){
+      alert("이름을 입력해주세요")
+    }else{
+      const queryParems = new URLSearchParams();
+      queryParems.set('q',name);
+      const queryString = queryParems.toString();
+      navigate(`/char?${queryString}`);
+    }
   }
   
-
     return(
         <div className="charsearchlayout">
           <div className="charsearchbar">

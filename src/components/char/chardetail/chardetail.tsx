@@ -15,24 +15,31 @@ export interface EquipmentProps{
   }
 }
 
-const Chardetail = () => {
+const Chardetail = (name:any) => {
 
 
   const api:string = apiKey
   
   const nickname:string = "그때그떨림"
   
-
-
   const [EquipmentData,setEquipmentData] = useState<EquipmentData[]>([]);
   const [AccessoryData,setAccessoryData] = useState<EquipmentData[]>([]);
-
+  const [userNickname, setUserNickname ] = useState<string>();
   const [EquipmentDataProps, setEquipmentDataProps] = useState<EquipmentProps[]>([]);
 
   useEffect(()=>{
-    const equipmentFetchData = async () => {
+    const userName =async (nickname:string) => {
+      const settingUserName =setUserNickname(nickname);
+      try {
+        await settingUserName;
+      } catch (error) {
+        console.log('error');
+      }
+    };
+
+    const equipmentFetchData = async (name:any) => {
       try{
-        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/equipment`,{
+        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${name.name}/equipment`,{
           headers :{
             'Authorization': `Bearer ${apiKey}`
           }
@@ -45,22 +52,12 @@ const Chardetail = () => {
       const accessoryFilterData = responseData.filter((e:EquipmentData)=> e.Type==='목걸이'||e.Type==='귀걸이'||e.Type==='반지'||e.Type==='팔찌'||e.Type==='어빌리티 스톤')
       setAccessoryData(accessoryFilterData);
 
-
-
     }catch(error){
       console.error(error)
     }};
-
-    equipmentFetchData();
-  },[]);
-
-  useEffect(()=>{
-    
-  },[EquipmentData]);
-
-  useEffect(()=>{
-    
-  },[AccessoryData])
+    userName( name );
+    equipmentFetchData(userNickname);
+  },[name,userNickname]);
 
 
 

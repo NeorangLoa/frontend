@@ -10,7 +10,6 @@ export default function Charinfo(name:any){
 
 
   const api:string = apiKey
-  
 
   const [userData, setUserData] = useState<UserinfoData|undefined>();
   const [userAttackData, setuserAttackData] = useState<Stat[]|undefined>();
@@ -20,8 +19,9 @@ export default function Charinfo(name:any){
 
   useEffect (() => {
     const userName =async (nickname:string) => {
+      const settingUserName =setUserNickname(nickname);
       try {
-        const settingUserName =await setUserNickname(nickname);
+        await settingUserName;
       } catch (error) {
         console.log('error');
       }
@@ -36,14 +36,14 @@ export default function Charinfo(name:any){
           }
       });
       const responseData:UserinfoData = response.data; 
-      console.log(responseData)
+
       setUserData(responseData);
 
       const userStatFilterData= responseData.Stats;
-      console.log(userStatFilterData)
+      //console.log(userStatFilterData)
 
       const userAttackStat = userStatFilterData.filter((e:Stat)=> e.Type==='공격력')
-      console.log(userAttackStat)
+     // console.log(userAttackStat)
       setuserAttackData(userAttackStat)
 
       const userHealthstat = userStatFilterData.filter((e:Stat)=> e.Type==='최대 생명력')
@@ -53,8 +53,7 @@ export default function Charinfo(name:any){
     }catch(error){
       console.error(error)
     }};
-
-    const engravingsFetchData = async ( name:any) => {
+    const engravingsFetchData = async ( name:any ) => {
       try{
         const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${name.name}/engravings`,{
           headers :{
@@ -62,12 +61,10 @@ export default function Charinfo(name:any){
           }
       });
       const responseData= response.data;
-      console.log(responseData);
-
+      //console.log(responseData);
       const userengravingFillterData = responseData.Effects;
-      console.log(userengravingFillterData);
+      //console.log(userengravingFillterData);
       setuserengravingData(userengravingFillterData)
-
     }catch(error){
       console.error(error)
     }};
@@ -77,8 +74,7 @@ export default function Charinfo(name:any){
     console.log(userNickame)
     profileFetchData( userNickame );
     engravingsFetchData(userNickame);
-
-  })
+  },[name,userNickame])
 
     return(
         <div className="detailCharInfoLayout">

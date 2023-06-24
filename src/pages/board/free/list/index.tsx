@@ -60,29 +60,7 @@ const PostList = () => {
                                 {listDatas.title}
                             </div>
                             <div className="nicknamelayout">
-                                닉네임
-                            </div>
-                            <div className="datelayout">
-                                21.21.21
-                            </div>
-                            <div className="viewcountlayout">
-                                {listDatas.viewCounts}
-                            </div>
-                        </div>
-                        )}
-                                {listData?.map((listDatas)=>
-                            <div className="bestpostlayout">
-                            <div className="postidlayout">
-                                {listDatas.postId}
-                            </div>
-                            <div className="typelayout">
-                                잠담
-                            </div>
-                            <div className="titlelayout">
-                                {listDatas.title}
-                            </div>
-                            <div className="nicknamelayout">
-                                닉네임
+                                {listDatas.nickname}
                             </div>
                             <div className="datelayout">
                                 21.21.21

@@ -5,7 +5,7 @@ import { Card, CardData, CardEffect } from "src/types/Types";
 import './CardLayer.scss'
 
 
-export default function CardLayer(){
+export default function CardLayer(name:any){
 
 
   const api:string = apiKey
@@ -14,12 +14,21 @@ export default function CardLayer(){
 
   const [CardData,setCardData] = useState<Card[]>([]);
   const [CardEffectData, setCardEffectData] = useState<CardEffect[]>([]);
+  const [userNickame, setUserNickname ] = useState<string>();
 
 
   useEffect(()=>{
-    const cardFetchData = async () => {
+    const userName =async (nickname:string) => {
+      const settingUserName =setUserNickname(nickname);
+      try {
+        await settingUserName;
+      } catch (error) {
+        console.log('error');
+      }
+    };
+    const cardFetchData = async ( name:any) => {
       try{
-        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/cards`,{
+        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${name.name}/cards`,{
           headers :{
             'Authorization': `Bearer ${apiKey}`
           }
@@ -31,21 +40,13 @@ export default function CardLayer(){
     }catch(error){
       console.error(error)
     }};
-
-    cardFetchData();
-  },[]);
-
-  useEffect(()=>{
-    //console.log(CardData);
-  },[CardData]);
-
-  useEffect(()=>{
-    //console.log(CardEffectData);
-  },[CardEffectData])
+    userName(name);
+    cardFetchData(userNickame);
+  },[name,userNickame]);
   
     return(
       <div className="CardLayerLayout">
-        카드
+         {CardData?.map((CardDatas)=><div><img className="Gemimg" src={CardDatas.Icon}/></div>)}
       </div>
     )
 }
