@@ -44,7 +44,7 @@ const RaidpostList = () => {
                 <div className="postlistbestpost">
                     <div className="bestpostname">
                         <div className="bestpostnametext">
-                            추천 게시물
+                            인기 게시물
                         </div>
                     </div>
                     <div>

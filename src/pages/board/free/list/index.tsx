@@ -39,7 +39,7 @@ const FreepostList = () => {
                 <div className="postlistbestpost">
                     <div className="bestpostname">
                         <div className="bestpostnametext">
-                            추천 게시물
+                            인기글
                         </div>
                     </div>
                     <div>
