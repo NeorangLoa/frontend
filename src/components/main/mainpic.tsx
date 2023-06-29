@@ -4,12 +4,9 @@ import { apiKey } from "src/api";
 
 export default function MainPic(props:any) {
 
-    const [firstabyssImg, setFirstAbyssImg] = useState<any|any>();
-    const [secondabyssImg, setSecondAbyssImg] = useState<any|any>();
-
-    const [firstguardianImg, setFirstGuardianImg] = useState<any|any>();
-    const [secondguardianImg, setSecondGuardianImg] = useState<any|any>();
-    const [thirdguardianImg, setThirdGuardianImg] = useState<any|any>();
+    const [abyssData, setAbyssData] = useState<any|any>([]);
+    const [guardianData, setGuardianData] = useState<any|any>([]);
+    const [eventData, setEventData] = useState<any|any>([]);
 
     const [firsteventImg, setFirstEventImg] = useState<any|any>();
     const [secondeventImg, setSecondEventImg] = useState<any|any>();
@@ -24,20 +21,22 @@ export default function MainPic(props:any) {
                         'Authorization': `Bearer ${apiKey}`
                     }
                 });
+
                 const responseData:any = response.data;
                 // console.log(response);
                 // console.log(responseData);
+                // console.log(responseData.length);
+                
+                const abyssData = responseData;
+                // console.log(abyssData);
 
-                const firstData:any = responseData[0];
-                const secondData:any = responseData[1];
-                // console.log(firstData);
+                const abyssImg = [];
+                for (let i = 0; i < abyssData.length; i++) {
+                    abyssImg[i] = abyssData[i].Image;
+                }
+                // console.log(abyssImg);
 
-                const firstImg:any = firstData.Image;
-                const secondImg:any = secondData.Image;
-                // console.log(firstImg);
-
-                setFirstAbyssImg(firstImg);
-                setSecondAbyssImg(secondImg);
+                setAbyssData( abyssImg );
 
             } catch(error){
                 console.error(error)
@@ -52,27 +51,25 @@ export default function MainPic(props:any) {
                         'Authorization': `Bearer ${apiKey}`
                     }
                 });
+
                 const responseData:any = response.data;
                 // console.log(response);
                 // console.log(responseData);
-
+    
                 const RaidData:any = responseData.Raids;
                 // console.log(RaidData);
+    
+                const guardianData = RaidData;
+                // console.log(guardianData);
 
-                const firstData:any = RaidData[0];
-                const secondData:any = RaidData[1];
-                const thirdData:any = RaidData[2];
-                // console.log(firstData);
+                const guardianImg = [];
+                for (let i = 0; i < guardianData.length; i++) {
+                    guardianImg[i] = guardianData[i].Image;
+                }
+                // console.log(guardianImg);
 
-                const firstImg:any = firstData.Image;
-                const secondImg:any = secondData.Image;
-                const thirdImg:any = thirdData.Image;
-                // console.log(firstImg);
-
-                setFirstGuardianImg(firstImg);
-                setSecondGuardianImg(secondImg);
-                setThirdGuardianImg(thirdImg);
-
+                setGuardianData( guardianImg );
+    
             } catch(error){
                 console.error(error)
             }
@@ -86,23 +83,21 @@ export default function MainPic(props:any) {
                         'Authorization': `Bearer ${apiKey}`
                     }
                 });
+
                 const responseData:any = response.data;
                 // console.log(response);
                 // console.log(responseData);
 
-                const firstData:any = responseData[0];
-                const secondData:any = responseData[1];
-                const thirdData:any = responseData[2];
-                // console.log(firstData);
+                const eventData = responseData;
+                // console.log(eventData);
 
-                const firstImg:any = firstData.Thumbnail;
-                const secondImg:any = secondData.Thumbnail;
-                const thirdImg:any = thirdData.Thumbnail;
-                // console.log(firstImg);
+                const eventImg = [];
+                for (let i = 0; i < eventData.length; i++) {
+                    eventImg[i] = eventData[i].Thumbnail;
+                }
+                // console.log(eventImg);
 
-                setFirstEventImg(firstImg);
-                setSecondEventImg(secondImg);
-                setThirdEventImg(thirdImg);
+                setEventData( eventImg );
 
             } catch(error) {
                 console.error(error);
@@ -112,31 +107,39 @@ export default function MainPic(props:any) {
         abyssimgFetchData();
         guardianimgFetchData();
         eventimgFetchData();
-    });
-
+    }, []);
 
     return (
         <div className="content">
             {props.name === "abyss-dungeons" &&
                 <div className="abyss">
-                    <img src={firstabyssImg} alt="" />
-                    <img src={secondabyssImg} alt="" />
+                    {
+                        abyssData.map((imageURL:any, index:any) => (
+                            <img src={imageURL} alt="" key={index} />
+                        ))
+                    }
                 </div>
             }
 
             {props.name === "challenge-guardian" &&
                 <div className="guardian">
-                    <img src={firstguardianImg} alt="" />
-                    <img src={secondguardianImg} alt="" />
-                    <img src={thirdguardianImg} alt="" />
+                    {
+                        guardianData.map((imageURL:any, index:any) => (
+                            <div>
+                                <img src={imageURL} alt="" key={index} />
+                            </div>
+                        ))
+                    }
                 </div>
             }
 
             {props.name === "event" &&
                 <div className="event">
-                    <img src={firsteventImg} alt="" />
-                    <img src={secondeventImg} alt="" />
-                    <img src={thirdeventImg} alt="" />
+                    {
+                        eventData.map((imageURL:any, index:any) => (
+                            <img src={imageURL} alt="" key={index} />
+                        ))
+                    }
                 </div>
             }
         </div>
