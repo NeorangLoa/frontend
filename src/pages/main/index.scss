@@ -78,7 +78,7 @@ div.down {
             margin: 1% 0.5% 0% 0.5%;
             width: 40%;
             height: 25%;
-            background-color: #6BB5A7;
+            background-color: #48B9A5;
             border-radius: 5px;
             border: 0;
 
@@ -95,6 +95,7 @@ div.down {
                 height: 74%;
                 background-color: #FFFFFF;
                 border-radius: 5px;
+                overflow: auto;     // 스크롤바
                 
                 table {
                     width: 100%;
@@ -113,22 +114,33 @@ div.down {
                 }
 
                 div.content {
-                    text-align: center;
-                    
-                    div.abyss img {
-                        margin: 0 10px;
-                        border-radius: 5px;
+                    div.abyss {
+                        img {
+                            margin: 0 10px;
+                            height: 115px;
+                            border-radius: 5px;
+                        }
                     }
-                    div.guardian img {
-                        margin: 0 10px;
-                        border-radius: 5px;
-                        width: 230px;
-                        height: 116px;
+                    div.guardian {
+                        div {
+                            display: inline-flex;
+                            margin: 0 10px;
+
+                            img {
+                                width: 220px;
+                                height: 115px;
+                                border-radius: 5px;
+                                object-fit: cover;
+                                object-position: 100%;
+                            }
+                        }
                     }
-                    div.event img {
-                        margin: 0 10px;
-                        border-radius: 5px;
-                        width: 230px;
+                    div.event {
+                        img {
+                            margin: 0 10px;
+                            height: 115px;
+                            border-radius: 5px;
+                        }
                     }
                 }
 
