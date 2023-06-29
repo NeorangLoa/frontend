@@ -1,7 +1,7 @@
 div.page {
     width: 100vw;
     height: 100vh;
-    background-color: #6BB5A7;
+    background-color: #48B9A5;
 }
 
 div.left {
@@ -36,39 +36,32 @@ div.left {
 }
 
 div.right {
-    float: right;
-    margin: auto;
-    width: 60vw;
-    // width: 65vw;
-    height: 100vh;
-    border-radius: 50px 0px 0px 50px;
-    background-color: #FEFEFE;
 
     div.rightForm {
-        width: 1200px;
-
+        float: right;
+        margin: 7% 20%;
+        width: 25vw;
+        height: 50vh;
+        border-radius: 25px;
+        background-color: #FEFEFE;
+        
         h1.title {
-            margin: 10% 20% 3% 20%;
-    
+            margin: 5% 0 0 5%;
             font-weight: normal;
-            font-size: 64px;
+            font-size: 32px;
             color: #000000;
         }
     
         div.buttonGroup {
-            margin: 3% 0% 7% 0%;
-            width: 1200px;
-            // height: 10vh;
-            height: 100px;
+            margin-top: 3%;
             text-align: center;
     
             button.loginButton, button.signupButton {
-                width: 30%;
-                height: 80%;
-    
-                background-color: #6BB5A7;
+                padding: 1% 0;
+                width: 45%;
+                background-color: #48B9A5;
                 color: #FFFFFF;
-                font-size: 44px;
+                font-size: 24px;
                 border-width: 1px;
                 // border: 0;
                 cursor: pointer;
@@ -85,28 +78,27 @@ div.right {
         }
     
         fieldset.loginForm {
+            margin-top: 36px;
             border: 0px;
     
             input.ID, input.PASSWORD {
                 display: block;
                 margin: 5% auto 10% auto;
                 width: 60%;
-    
-                border: 0px;
-                border-bottom: 1px solid #000000;
-                font-size: 36px;
-                opacity: 0.5;
+                border: 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                font-size: 18px;
+                // opacity: 0.5;
             }
             button.LoginButton {
                 display: block;
                 margin: 0 auto;
                 width: 60%;
-    
-                background-color: #6BB5A7;
+                background-color: #48B9A5;
                 border-radius: 10px;
                 border: 0px;
                 color: #FFFFFF;
-                font-size: 36px;
+                font-size: 24px;
                 cursor: pointer;
             }
             button.LoginButton:hover {
@@ -115,28 +107,26 @@ div.right {
         }
     
         fieldset.SignUpForm {
+            margin-top: 36px;
             border: 0px;
     
             input.EMAIL, input.ID, input.PASSWORD, input.rePASSWORD {
                 display: block;
                 margin: 5% auto 5% auto;
                 width: 60%;
-    
                 border: 0px;
-                border-bottom: 1px solid #000000;
-                font-size: 36px;
-                opacity: 0.5;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                font-size: 18px;
             }
             button.SignUpButton {
                 display: block;
-                margin: 0 auto;
+                margin: 10% auto 0 auto;
                 width: 60%;
-    
-                background-color: #6BB5A7;
+                background-color: #48B9A5;
                 border-radius: 10px;
                 border: 0px;
                 color: #FFFFFF;
-                font-size: 36px;
+                font-size: 24px;
                 cursor: pointer;
             }
             button.SignUpButton:hover {
