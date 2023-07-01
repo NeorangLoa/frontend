@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import './index.scss'
+import { URLSearchParams } from "url";
+import { useNavigate } from "react-router-dom";
 
 
 export interface PostListType{
@@ -27,6 +29,15 @@ const FreepostList = () => {
         postListData()
     },[])
 
+    const navigate = useNavigate()
+
+    const handlePost = (postId:any) =>{
+        const queryParems = new URLSearchParams();
+        queryParems.set('post',postId);
+        const queryString = queryParems.toString();
+        navigate(`/post?${queryString}`);
+    }
+
     return(
         <div className="postlistlayout">
             <div className="postlistmain">
@@ -49,7 +60,7 @@ const FreepostList = () => {
                 <div className="postlistnewpost">
                 번호 제목 작성자 작성일 조회 개추
                 {listData?.map((listDatas)=>
-                            <div className="bestpostlayout">
+                            <div className="bestpostlayout" onClick={handlePost}>
                             <div className="postidlayout">
                                 {listDatas.postId}
                             </div>
