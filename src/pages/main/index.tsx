@@ -1,22 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MainComponent from 'src/components/main';
 import './index.scss';
+import { apiKey } from "src/api";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Main(){
+
+    const api:string = apiKey
+
+    const [name, setName] = useState('');
+
+    const onSearch = (e:any) => {
+      setName(e.target.value)
+      console.log(name);
+    }
+  
+
+    const navigate = useNavigate();
+    
+    const handleSearch = () =>{
+        if (name === ''){
+          alert("이름을 입력해주세요")
+        }else{
+          const queryParems = new URLSearchParams();
+          queryParems.set('q',name);
+          const queryString = queryParems.toString();
+          navigate(`/char?${queryString}`);
+        }
+      }
     return(
         <div className="page">
-            <div className="navbar">
-                <span>나랑로아</span>
-                <span>자유게시판</span>
-                <span>레이드 게시판</span>
-                <span>로그인</span>
-            </div>
-
             <div className="up">
                 <h1 className='title'>나랑로아</h1>
                 <div className="search">
-                    <input className="searchinput" type="text" placeholder="캐릭터 검색 (?)" />
-                    <input className="searchbutton" type="button" />
+                    <input className="searchinput" type="text" placeholder="검색할 캐릭터명을 입력하세요" onChange={onSearch} value={name}  />
+                    <input className="searchbutton" onClick={handleSearch} type="button" />
                 </div>
             </div>
 

@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import './index.scss'
+import { URLSearchParams } from "url";
+import { useNavigate } from "react-router-dom";
 
 
 export interface PostListType{
@@ -10,7 +12,7 @@ export interface PostListType{
     "viewCounts": number
 }
 
-const PostList = () => {
+const FreepostList = () => {
     const [listData, setListData] = useState<PostListType[]|undefined>()
     useEffect(()=>{
         const postListData =async () => {
@@ -27,6 +29,15 @@ const PostList = () => {
         postListData()
     },[])
 
+    const navigate = useNavigate()
+
+    const handlePost = (postId:any) =>{
+        const queryParems = new URLSearchParams();
+        queryParems.set('post',postId);
+        const queryString = queryParems.toString();
+        navigate(`/post?${queryString}`);
+    }
+
     return(
         <div className="postlistlayout">
             <div className="postlistmain">
@@ -39,7 +50,7 @@ const PostList = () => {
                 <div className="postlistbestpost">
                     <div className="bestpostname">
                         <div className="bestpostnametext">
-                            추천 게시물
+                            인기글
                         </div>
                     </div>
                     <div>
@@ -49,7 +60,7 @@ const PostList = () => {
                 <div className="postlistnewpost">
                 번호 제목 작성자 작성일 조회 개추
                 {listData?.map((listDatas)=>
-                            <div className="bestpostlayout">
+                            <div className="bestpostlayout" onClick={handlePost}>
                             <div className="postidlayout">
                                 {listDatas.postId}
                             </div>
@@ -60,29 +71,7 @@ const PostList = () => {
                                 {listDatas.title}
                             </div>
                             <div className="nicknamelayout">
-                                닉네임
-                            </div>
-                            <div className="datelayout">
-                                21.21.21
-                            </div>
-                            <div className="viewcountlayout">
-                                {listDatas.viewCounts}
-                            </div>
-                        </div>
-                        )}
-                                {listData?.map((listDatas)=>
-                            <div className="bestpostlayout">
-                            <div className="postidlayout">
-                                {listDatas.postId}
-                            </div>
-                            <div className="typelayout">
-                                잠담
-                            </div>
-                            <div className="titlelayout">
-                                {listDatas.title}
-                            </div>
-                            <div className="nicknamelayout">
-                                닉네임
+                                {listDatas.nickname}
                             </div>
                             <div className="datelayout">
                                 21.21.21
@@ -106,4 +95,4 @@ const PostList = () => {
     )
 }
 
-export default PostList;
+export default FreepostList;

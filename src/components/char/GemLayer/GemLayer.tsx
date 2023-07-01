@@ -4,49 +4,44 @@ import { apiKey } from "src/api";
 import { Gem, GemData, GemEffect } from "src/types/Types";
 import './GemLayer.scss'
 
-export default function GemLayer(){
-
-  
-
-
+export default function GemLayer(name:any){
   const api:string = apiKey  
   const nickname:string = "그때그떨림"
 
   const [GemData,setGemData] = useState<Gem[]>([]);
   const [GemEffectData, setGemEffectData] = useState<GemEffect[]>([]);
-
+  const [userNickname, setUserNickname ] = useState<string>();
 
   useEffect(()=>{
-    const cardFetchData = async () => {
+    const userName =async (nickname:string) => {
+      const settingUserName = setUserNickname(nickname);
+      try {
+        await settingUserName;
+      } catch (error) {
+        console.log('error');
+      }
+    };
+    const cardFetchData = async ( name:any ) => {
       try{
-        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${nickname}/cards`,{
+        const response = await axios.get(`https://developer-lostark.game.onstove.com/armories/characters/${name.name}/gems`,{
           headers :{
             'Authorization': `Bearer ${apiKey}`
           }
       });
       const responseData:GemData = response.data; 
-      //console.log(responseData)
+      console.log(responseData)
       setGemData(responseData.Gems)
       setGemEffectData(responseData.Effects)
-
-      // const cooldownGemData = GemData.filter((e:Gem) => e.)
     }catch(error){
       console.error(error)
     }};
+    userName(name)
+    cardFetchData(userNickname);
+  },[name,userNickname]);
 
-    cardFetchData();
-  },[]);
-
-  useEffect(()=>{
-    //console.log(GemData);
-  },[GemData]);
-
-  useEffect(()=>{
-    //console.log(GemEffectData);
-  },[GemEffectData])
     return(
       <div className="GemLayerLayout">
-        보석
+        {GemData?.map((Gems)=><div><img className="Gemimg" src={Gems.Icon}/></div>)}
       </div>
   )
 }

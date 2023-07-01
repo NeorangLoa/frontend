@@ -21,9 +21,9 @@ export default function Char(){
             <div className="charinfolayout">
                 <Charinfo name={searchTerm}/>
                 <div>charNav</div>
-                <Chardetail/>
-                <GemLayer/>
-                <CardLayer/>
+                <Chardetail name={searchTerm} />
+                <GemLayer name={searchTerm}/>
+                <CardLayer name={searchTerm}/>
             </div>
         </div>
     )
