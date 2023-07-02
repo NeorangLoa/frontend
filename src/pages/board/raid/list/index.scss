@@ -1,0 +1,115 @@
+.postlistlayout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+.postlistmain{
+    width: 1080px;
+    height: auto;
+    margin: auto;
+    justify-self: center;
+}
+
+.AD{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.boardname{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+
+.postlistbestpost{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    color: black;
+    border: 1px solid #B6B6B6;
+}
+
+.bestpostname{
+    width: 100%;
+    height: 32px;
+    background-color: #48B9A5;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bestpostnametext{
+    padding: 4px;
+    padding-left: 8px;
+}
+
+.bestpostlayout{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom: 0.5px solid black;
+}
+
+.postlistnewpost{
+    width: 100%;
+}
+
+.postidlayout{
+    width: 20px;
+    text-align: center;
+    padding-right: 4px;
+    padding-left: 4px;
+
+}
+
+.typelayout{
+    width: 100px;
+    text-align: center;
+}
+
+.titlelayout{
+    width: 700px;
+}
+
+.nicknamelayout{
+    width: 100px;
+    text-align: center;
+}
+
+.datelayout{
+    width: 100px;
+    text-align: center;
+}
+
+.viewcountlayout{
+    width: 50px;
+    text-align: center;
+}
+
+.writebuttonlayout{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.pagenationlayout{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
