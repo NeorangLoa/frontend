@@ -10,6 +10,7 @@ export default function Login() {
 
   return (
     <div className='page'>
+      
       <div className="left">
         <div className='leftForm'>
           <h1 className='title'>나랑로아</h1>
