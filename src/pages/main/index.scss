@@ -73,6 +73,17 @@ div.down {
         width: 1920px;
         height: 640px;
 
+        div#LoAevent {
+            width: 81%;
+
+            p {
+                margin: 0.5%;
+            }
+            div.componentContent {
+                width: 99%;
+            }
+        }
+
         div.mainForm {
             display: inline-block;
             margin: 1% 0.5% 0% 0.5%;
@@ -98,15 +109,30 @@ div.down {
                 overflow: auto;     // 스크롤바
                 
                 table {
-                    width: 100%;
+                    margin: 0 auto;
+                    width: 98%;
                     height: 100%;
+                    table-layout: fixed;
                     border-collapse: collapse;
 
-                    thead tr th{
-                        border-bottom: 2px solid #000000;
-                    }
-                    tbody tr td {
-                        border-bottom: 1px solid #000000;
+                    tbody tr {
+                        td {
+                            border-bottom: 1px solid rgba(0, 0, 0, .5);
+                            font-weight: bold;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                        td.category {
+                            width: 10%;
+                        }
+                        td.title {
+                            width: 83%;
+                            text-align: left;
+                        }
+                        td.recommendation {
+                            width: 7%;
+                        }
                     }
                     tbody tr:last-child td {
                         border-bottom: none;
