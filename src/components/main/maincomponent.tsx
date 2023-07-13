@@ -4,7 +4,7 @@ import MainPic from "src/components/main/mainpic";
 
 export default function Main(props:any) {
     return(
-        <div className="mainForm">
+        <div className="mainForm" id={props.className}>
             <p>{props.name}</p>
 
             {props.name === "자유 게시판" &&

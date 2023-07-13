@@ -1,5 +1,5 @@
 import React from "react";
-import MainComponent from 'src/components/main/index';
+import MainComponent from 'src/components/main/maincomponent';
 import './index.scss';
 
 export default function Main() {
@@ -21,7 +21,7 @@ export default function Main() {
                     <MainComponent name="레이드 게시판" />
                     <MainComponent name="어비스 던전" />
                     <MainComponent name="도전 가디언" />
-                    <MainComponent name="로스트아크 이벤트" />
+                    <MainComponent name="로스트아크 이벤트" className="LoAevent" />
                 </div>
             </div>
         </div>
