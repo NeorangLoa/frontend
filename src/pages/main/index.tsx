@@ -1,7 +1,6 @@
-import React from "react";
 import MainComponent from 'src/components/main/maincomponent';
 import React, { useEffect, useState } from "react";
-import MainComponent from 'src/components/main';
+//import MainComponent from 'src/components/main';
 import './index.scss';
 import { apiKey } from "src/api";
 import { useNavigate } from "react-router-dom";
