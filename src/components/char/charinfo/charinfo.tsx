@@ -35,7 +35,7 @@ export default function Charinfo(name:any){
             'Authorization': `Bearer ${apiKey}`
           }
       });
-      const responseData:UserinfoData = response.data; 
+      const responseData:UserinfoData = response.data;
 
       setUserData(responseData);
 

@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import './index.scss'
-import { URLSearchParams } from "url";
 import { useNavigate } from "react-router-dom";
 
 

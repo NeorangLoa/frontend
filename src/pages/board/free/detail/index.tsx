@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { URLSearchParams } from "url";
 
 export default function Freepostdetail(){
     const location = useLocation();
