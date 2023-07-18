@@ -1,149 +1,142 @@
 div.page {
     width: 100vw;
     height: 100vh;
-    background-color: #6BB5A7;
+    background-color: #48B9A5;
 }
 
 div.left {
     float: left;
+    margin: auto;
     width: 35vw;
     height: 100vh;
 
-    h1.title {
-        margin: 10%;
+    div.leftForm {
+        width: 600px;
 
-        font-weight: bold;
-        font-size: 64px;
-        color: #FFFFFF;
-    }
+        h1.title {
+            margin: 50px;
+            font-weight: bold;
+            font-size: 64px;
+            color: #FFFFFF;
+        }
 
-    span.introduction {
-        position: absolute;
-        bottom: 5%;
-        margin: 0% 3%;
-    
-        font-weight: bold;
-        // font-size: 2em;
-        font-size: 32px;
-        color: #FFFFFF;
+        span.introduction {
+            position: absolute;
+            bottom: 50px;
+            margin: 0 50px;
+            font-weight: bold;
+            font-size: 32px;
+            color: #FFFFFF;
 
-        p {
-            margin: 0px;
+            p {
+                margin: 0px;
+            }
         }
     }
 }
 
 div.right {
     float: right;
-    width: 60vw;
-    // width: 65vw;
-    height: 100vh;
-    border-radius: 50px 0px 0px 50px;
+    margin: auto;
+    width: 50vw;
+    height: 100vw;
     background-color: #FEFEFE;
+    border-radius: 50px 0 0 50px;
 
-    // img.logo {
-    //     display: block;
-    //     margin: 20% auto;
-    //     width: 30%;
-    // }
-
-    h1.title {
-        margin: 10% 20% 3% 20%;
-
-        font-weight: normal;
-        font-size: 64px;
-        color: #000000;
-    }
-
-    div.buttonGroup {
-        margin: 3% 0% 7% 0%;
-        width: 60vw;
-        height: 10vh;
-        text-align: center;
-
-        button.loginButton, button.signupButton {
-            width: 30%;
-            height: 80%;
-
-            background-color: #6BB5A7;
-            color: #FFFFFF;
-            font-size: 44px;
-            border-width: 1px;
-            // border: 0;
-            cursor: pointer;
+    div.rightForm {
+        margin: 200px auto;
+        width: 400px;
+        height: 540px;
+        
+        h1.title {
+            margin: 5% 0 0 5%;
+            font-weight: normal;
+            font-size: 32px;
+            color: #000000;
         }
-        button.loginButton {
-            margin-right: -4px;
+    
+        div.buttonGroup {
+            margin-top: 3%;
+            text-align: center;
+    
+            button.loginButton, button.signupButton {
+                padding: 1% 0;
+                width: 45%;
+                background-color: #48B9A5;
+                color: #FFFFFF;
+                font-size: 24px;
+                border-width: 1px;
+                // border: 0;
+                cursor: pointer;
+            }
+            button.loginButton {
+                margin-right: -4px;
+            }
+            button.signupButton {
+                margin-left: -4px;
+            }
+            button:hover {
+                background-color: #279574;
+            }
         }
-        button.signupButton {
-            margin-left: -4px;
-        }
-        button:hover {
-            background-color: #279574;
-        }
-    }
-
-    // button.sociallogin {
-        // text-align: center;
-    // }
-
-    fieldset.loginForm {
-        border: 0px;
-
-        input.ID, input.PASSWORD {
-            display: block;
-            margin: 5% auto 10% auto;
-            width: 60%;
-
+    
+        fieldset.loginForm {
+            margin-top: 36px;
             border: 0px;
-            border-bottom: 1px solid #000000;
-            font-size: 36px;
-            opacity: 0.5;
+    
+            input.ID, input.PASSWORD {
+                display: block;
+                margin: 5% auto 10% auto;
+                width: 75%;
+                border: 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                outline: none;
+                font-size: 18px;
+                // opacity: 0.5;
+            }
+            button.LoginButton {
+                display: block;
+                margin: 0 auto;
+                width: 75%;
+                background-color: #48B9A5;
+                border-radius: 10px;
+                border: 0px;
+                color: #FFFFFF;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            button.LoginButton:hover {
+                background-color: #279574;
+            }
         }
-        button.LoginButton {
-            display: block;
-            margin: 0 auto;
-            width: 60%;
-
-            background-color: #6BB5A7;
-            border-radius: 10px;
+    
+        fieldset.SignUpForm {
+            margin-top: 36px;
             border: 0px;
-            color: #FFFFFF;
-            font-size: 36px;
-            cursor: pointer;
-        }
-        button.LoginButton:hover {
-            background-color: #279574;
-        }
-    }
-
-    fieldset.SignUpForm {
-        border: 0px;
-
-        input.EMAIL, input.ID, input.PASSWORD, input.rePASSWORD {
-            display: block;
-            margin: 5% auto 5% auto;
-            width: 60%;
-
-            border: 0px;
-            border-bottom: 1px solid #000000;
-            font-size: 36px;
-            opacity: 0.5;
-        }
-        button.SignUpButton {
-            display: block;
-            margin: 0 auto;
-            width: 60%;
-
-            background-color: #6BB5A7;
-            border-radius: 10px;
-            border: 0px;
-            color: #FFFFFF;
-            font-size: 36px;
-            cursor: pointer;
-        }
-        button.SignUpButton:hover {
-            background-color: #279574;
+    
+            input.EMAIL, input.ID, input.PASSWORD, input.rePASSWORD {
+                display: block;
+                margin: 5% auto 5% auto;
+                width: 75%;
+                border: 0px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                outline: none;
+                font-size: 18px;
+            }
+            button.SignUpButton {
+                display: block;
+                margin: 10% auto 0 auto;
+                width: 75%;
+                background-color: #48B9A5;
+                border-radius: 10px;
+                border: 0px;
+                color: #FFFFFF;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            button.SignUpButton:hover {
+                background-color: #279574;
+            }
         }
     }
 }

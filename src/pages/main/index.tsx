@@ -1,3 +1,5 @@
+import React from "react";
+import MainComponent from 'src/components/main/maincomponent';
 import React, { useEffect, useState } from "react";
 import MainComponent from 'src/components/main';
 import './index.scss';
@@ -40,25 +42,12 @@ export default function Main(){
             </div>
 
             <div className="down">
-                <div className="mainForm">
-                    <p>자유 게시판</p>
-                    <MainComponent />
-                </div>
-                <div className="mainForm">
-                    <p>레이드 게시판</p>
-                    <MainComponent />
-                </div>
-                <div className="mainForm">
-                    <p>로스트아크 정보</p>
-                    <MainComponent />
-                </div>
-                <div className="mainForm">
-                    <p>로스트아크 정보</p>
-                    <MainComponent />
-                </div>
-                <div className="mainForm">
-                    <p>로스트아크 이벤트</p>
-                    <MainComponent />
+                <div className="downForm">
+                    <MainComponent name="자유 게시판" />
+                    <MainComponent name="레이드 게시판" />
+                    <MainComponent name="어비스 던전" />
+                    <MainComponent name="도전 가디언" />
+                    <MainComponent name="로스트아크 이벤트" className="LoAevent" />
                 </div>
             </div>
         </div>
