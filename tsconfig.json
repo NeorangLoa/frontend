@@ -20,8 +20,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
+      "url": ["node_modules/url"],
       "@pages/*":["src/pages/*"]
     }
   },

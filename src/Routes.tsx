@@ -1,3 +1,4 @@
+import FreepostEdit from '@pages/board/free/edit';
 import Layout from './pages/_layout';
 import React, { lazy } from 'react';
 
@@ -18,7 +19,8 @@ export const routes = [
       { path: '/login', element: <Login /> },
       { path: '/board/free/list', element:<FreepostList/>},
       { path: '/board/raid/list', element:<RaidpostList/>},
-      { path: '/board/free/detail', element:<Freepostdetail/>}
+      { path: '/board/free/detail', element:<Freepostdetail/>},
+      { path: '/board/free/edit', element:<FreepostEdit/>},
     ],
   },
 ];
