@@ -19,7 +19,7 @@ export default function LoginComponent() {
     console.log(email);
     console.log(password);
     try{
-      const response =await axios.post(`http://localhost:8080/api/v1/login`,{email,password})
+      const response =await axios.post(`http://localhost:8080/api/v1/login`,{email,password},{ withCredentials: true })
       console.log(response)
     }catch(e){
       console.log(e);
