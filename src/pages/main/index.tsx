@@ -33,10 +33,12 @@ export default function Main(){
     return(
         <div className="page">
             <div className="up">
-                <h1 className='title'>나랑로아</h1>
-                <div className="search">
-                    <input className="searchinput" type="text" placeholder="검색할 캐릭터명을 입력하세요" onChange={onSearch} value={name}  />
-                    <input className="searchbutton" onClick={handleSearch} type="button" />
+                <div className='upForm'>
+                    <h1 className='title'>나랑로아</h1>
+                    <div className="search">
+                        <input className="searchinput" type="text" placeholder="검색할 캐릭터명을 입력하세요" onChange={onSearch} value={name}  />
+                        <input className="searchbutton" onClick={handleSearch} type="button" />
+                    </div>
                 </div>
             </div>
 
