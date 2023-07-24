@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUpComponent(){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [nickname, setName] = useState('');
+  const navigate = useNavigate()
 
 
   const setId = (e:any) =>{
@@ -32,6 +34,7 @@ export default function SignUpComponent(){
     }catch(e){
       console.log(e);
     }
+    navigate('/')
   }
     
     return(

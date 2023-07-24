@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginComponent() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate()
 
   const setId = (e:any) =>{
     setEmail(e.target.value)
@@ -19,11 +21,16 @@ export default function LoginComponent() {
     console.log(email);
     console.log(password);
     try{
-      const response =await axios.post(`http://localhost:8080/api/v1/login`,{email,password},{ withCredentials: true })
+      const response =await axios.post(`http://localhost:8080/api/v1/login`,
+        {email,password},
+        { withCredentials: true, }
+      )
       console.log(response)
     }catch(e){
       console.log(e);
     }
+    navigate('/')
+
   }
 
   return (
