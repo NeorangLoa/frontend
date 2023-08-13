@@ -1,0 +1,24 @@
+.freeboarddetail {
+    margin: 5% auto;
+    width: 1600px;
+    height: 840px;
+    
+    .AD1 {
+        float: left;
+        display: flex;
+        width: 10%;
+        height: 100%;
+        background-color: #B6B6B6;
+        justify-content : center;
+        align-items : center;
+    }
+    .AD2 {
+        float: right;
+        display: flex;
+        width: 10%;
+        height: 100%;
+        background-color: #B6B6B6;
+        justify-content : center;
+        align-items : center;
+    }
+}

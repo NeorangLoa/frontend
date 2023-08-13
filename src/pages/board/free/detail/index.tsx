@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import './index.scss';
 
 export default function Freepostdetail(){
     // const location = useLocation();
@@ -7,6 +8,13 @@ export default function Freepostdetail(){
     // const searchTerm = queryParems.get('post');
 
     return(
-        <div>hello world</div>
+        <div className="freeboarddetail">
+            <div className="AD1">AD</div>
+            <div className="AD2">AD</div>
+            
+            <div>
+                컴포넌트
+            </div>
+        </div>
     )
 }
