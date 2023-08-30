@@ -5,8 +5,8 @@ export default function Freepostdetail(){
 
     return(
         <div className="raidboarddetail">
-            <div className="AD1">AD</div>
-            <div className="AD2">AD</div>
+            <div className="AD left-ad">Left AD</div>
+            <div className="AD right-ad">Right AD</div>
             
             <Detail />
         </div>
