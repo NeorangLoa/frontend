@@ -31,6 +31,7 @@ export default function SignUpComponent(){
     try{
       const response =await axios.post(`http://localhost:8080/api/v1/user`,{email,password,nickname})
       console.log(response)
+      alert('회원가입에 성공했습니다!')
     }catch(e){
       console.log(e);
     }

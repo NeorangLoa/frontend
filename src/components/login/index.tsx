@@ -18,16 +18,26 @@ export default function LoginComponent() {
   }
 
   const handleLogin =async (e:any) => {
-    console.log(email);
-    console.log(password);
+    //console.log(email);
+    //console.log(password);
     try{
       const response =await axios.post(`http://localhost:8080/api/v1/login`,
-        {email,password},
-        { withCredentials: true, }
+      {
+        params:{
+          email:'hello@gmail.com',
+          password:'0805'
+        },
+        headers:{
+          'Access-Control-Allow-Origin': '*',
+          withCredentials: true
+        }
+      }
       )
       console.log(response)
+      alert('로그인에 성공했습니다')
     }catch(e){
       console.log(e);
+      alert('로그인에 실패했습니다')
     }
     navigate('/')
 
