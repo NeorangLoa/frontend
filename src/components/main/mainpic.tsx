@@ -7,10 +7,6 @@ export default function MainPic(props:any) {
     const [abyssData, setAbyssData] = useState<any|any>([]);
     const [guardianData, setGuardianData] = useState<any|any>([]);
     const [eventData, setEventData] = useState<any|any>([]);
-
-    const [firsteventImg, setFirstEventImg] = useState<any|any>();
-    const [secondeventImg, setSecondEventImg] = useState<any|any>();
-    const [thirdeventImg, setThirdEventImg] = useState<any|any>();
     
     useEffect (() => {
         const abyssimgFetchData = async () => {

@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import Detail from 'src/components/board/index';
+import './index.scss';
 
 export default function Freepostdetail(){
-    // const location = useLocation();
-    // const queryParems = new URLSearchParams(location.search);
-    // const searchTerm = queryParems.get('post');
 
     return(
-        <div>hello world</div>
+        <div className="freeboarddetail">
+            <div className="AD left-ad">Left AD</div>
+            <div className="AD right-ad">Right AD</div>
+            
+            <Detail />
+        </div>
     )
 }
