@@ -23,10 +23,10 @@ export default function LoginComponent() {
     try{
       const response =await axios.post(`http://localhost:8080/api/v1/login`,
       {
-        params:{
-          email:'hello@gmail.com',
-          password:'0805'
-        },
+        email:'hello@gmail.com',
+        password:'0805'
+      },
+      {
         headers:{
           'Access-Control-Allow-Origin': '*',
           withCredentials: true

@@ -4,10 +4,9 @@ import React, { useEffect, useState } from "react";
 import './index.scss';
 import { apiKey } from "src/api";
 import { useNavigate } from "react-router-dom";
-
+//import Cookies from 'js-cookie'
 
 export default function Main(){
-
     const api:string = apiKey
 
     const [name, setName] = useState('');
