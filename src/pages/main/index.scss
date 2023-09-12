@@ -1,6 +1,6 @@
 div.page {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 
 div.navbar {
@@ -17,7 +17,7 @@ div.up {
 
     div.upForm {
         margin: 0 auto;
-        width: 1920px;
+        width: 100%;
 
         h1.title {
             margin: 0;
@@ -63,15 +63,15 @@ div.up {
 div.down {
     margin: auto;
     width: 100vw;
-    height: 60vh;
+    height: 100%;
     background-color: #FFFFFF;
     text-align: center;
 
     div.downForm {
         margin: 0 auto;
         padding-top: 1%;
-        width: 1920px;
-        height: 640px;
+        width: 100%;
+        height: 100%;
 
         div#LoAevent {
             width: 81%;
